@@ -18,21 +18,6 @@
 
 ---
 
-## Example (Optional)
-
-```javascript
-// code away!
-
-let generateProject = project => {
-  let code = [];
-  for (let js = 0; js < project.length; js++) {
-    code.push(js);
-  }
-};
-```
-
----
-
 ## Installation
 
 - All the `code` required to get started
@@ -40,7 +25,7 @@ let generateProject = project => {
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/fvcproductions/SOMEREPO`
+- Clone this repo to your local machine using `https://github.com/aecheverrir/carinfo.git`
 
 ### Setup
 
