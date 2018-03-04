@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
-    "server": "node bin/www"
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "server": "no de bin/www"
   },
   "author": "aecheverrir, paalvarado10",
   "license": "MIT",
