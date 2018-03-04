@@ -22,13 +22,13 @@
 
 ## Installation
 
-- clone the repo on your console, instructions [below](##clone)
+- clone the repo on your console, instructions [below](#clone)
 - use `cd carinfo` to enter the main folder
 - use `npm install` to install npm dependencies
 - use `npm run webpack` to generate the 
 - use ``
 
-### Clone
+## Clone
 
 - Clone this repo to your local machine using `https://github.com/aecheverrir/carinfo.git`
 
