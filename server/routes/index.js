@@ -2,12 +2,47 @@ var path = require('path');
 var router = require('express').Router();
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
+var bodyParser = require("body-parser");
 // Connection URL
 const url = 'mongodb://localhost:27017';
 // Database Name
 const dbName = 'carinfo';
 const a = -1;
 
+//Reviews
+// Insert Review
+function addReview (db, query, callback) {
+  
+  const collection = db.collection('reviews'); 
+	var result = query.add.split(",");
+	 console.log(result);
+var iD = result[0];
+var car = result[1];
+var puntuation = result[2];
+
+var nuevo ={"id":"'"+iD+"'","idcarro":"'"+car+"'","puntuacion":"'"+puntuation+"'"};
+	console.log(nuevo);
+  collection.insert(nuevo,
+   (err, result)=> {
+   	if (err) throw err;
+   	console.log("Entraa a GUARDAR");
+    callback(result);
+  });
+}
+
+function findReviews (db, query, callback) {
+  // Get the documents collection
+  const collection = db.collection('reviews');
+  // Find some documents
+  collection.find(query).toArray(function(err, docs) {
+    assert.equal(err, null);
+    console.log("Found the following records " +docs.lenght);
+    callback(docs);
+  });
+}
+
+
+//carros
 function findCarros (db, query, callback) {
   // Get the documents collection
   const collection = db.collection('carros');
@@ -39,7 +74,7 @@ MongoClient.connect(url, function(err, client) {
   const db = client.db(dbName);
 
   if(query === a){
-  	findCarros(db, query, callback);
+  	findAll(db, query, callback);
   }
 
   findCarros(db, query, callback);
@@ -49,8 +84,40 @@ MongoClient.connect(url, function(err, client) {
 }
 
 
+function postReview(query, callback){
+// Use connect method to connect to the server
+MongoClient.connect(url, function(err, client) {
+  assert.equal(null, err);
+  console.log("Connected successfully to server");
+
+  const db = client.db(dbName);
+
+  addReview(db, query, callback);
+
+  client.close();
+});
+}
 
 
+function getReviews(query, callback){
+// Use connect method to connect to the server
+MongoClient.connect(url, function(err, client) {
+  assert.equal(null, err);
+  console.log("Connected successfully to server");
+
+  const db = client.db(dbName);
+
+  findReviews(db, query, callback);
+
+  client.close();
+});
+}
+
+
+
+
+
+// CARROS
 router.get('/filtro/:marca', function (req, res) {
   getCarros(
   {marca: req.params.marca},
@@ -122,11 +189,25 @@ router.get('/motor/:motor', function (req, res) {
 		res.send(carros);
 	});
 }); 
-//29:47
+// REVIEWS
+router.get('/add/:add', (req, res) =>{
+	postReview(
+		{add: req.params.add},
+		(reviews) =>{
+			res.send(reviews);
+		});
+});
 
+router.get('/reviews/:idcarro', function (req, res) {
+  getReviews(
+  {idcarro: req.params.idcarro},
+	(reviews) =>{
+		console.log("Entra con filtro: idcarro")
+		res.send(reviews);
+	});
+});
 
-
-
+// BASE ROUTE
  router.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../../client/index.html'));
  });

@@ -9,6 +9,7 @@
   "author": "aecheverrir, paalvarado10",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.15.2",
     "mongodb": "^3.0.3",
     "react": "^15.4.2",
