@@ -1,18 +1,32 @@
 import React from 'react';
 
-import Banner from "./Banner"
-import DataBar from "./DataBar"
-import ResultItem from "./ResultItem"
-import SideBar from "./SideBar"
-
+import Banner from './Banner';
+import DataBar from './DataBar';
+import Results from './Results';
+import SideBar from './SideBar';
 
 export default class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            name: "Alejandro"
+        }
+    }  
+
+
   render () {
+
+    /*style*/
+    var styles = { 
+      "border": "0px",
+      "margin": "0px"
+    };
+
     return (
-    	<div>
-    		<Banner />
+    	<div style={styles}>
+    		<Banner title={"CarInfo"}/>
     		<DataBar />
-    		<ResultItem />
+    		<Results />
     		<SideBar />
     	</div>
     );

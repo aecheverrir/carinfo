@@ -1,7 +1,10 @@
 import React from 'react';
+import FilterAtt from './SideBar/FilterAtt'
 
 export default class SideBar extends React.Component {
   render () {
-    return <div>SideBar</div>;
+    return (
+    	<div>SideBar</div>
+    );
   }
 }
