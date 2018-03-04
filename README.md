@@ -11,6 +11,7 @@
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Team](#team)
+- [Setup](#setup)
 - [License](#license)
 
 ---
@@ -19,14 +20,21 @@
 
 - NodeJS
 - NPM
+- MongoDB
 
 ## Installation
 
 - clone the repo on your console, instructions [below](#clone)
 - use `cd carinfo` to enter the main folder
 - use `npm install` to install npm dependencies
-- use `npm run webpack` to generate the 
-- use ``
+- follow [setup](#setup) guide
+- use `npm run webpack` to generate the bundle.js file
+- use `node bin/www` to run the server locally at port you defined or otherwise it's 8000
+
+## Setup
+- Go to server/routes/index.js in order to change `const url` to the desired setting for your needs. If running locally you should have something like this: `const url = 'mongodb://localhost:27017';`
+- Fill your database. You will need to insert data into your database for the app to display the car information provided. There is an example with a few records in the main folder called: scriptbd.txt
+- Define the port you want the app to run at. It's allready set as port 8000, in case you want to change it head over to: bin/www and change `var port = 8000;` replacing 8000 for the port you want to use.
 
 ## Clone
 
