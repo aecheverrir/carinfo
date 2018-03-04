@@ -1,4 +1,4 @@
-<img src="https://avatars1.githubusercontent.com/u/4284691?v=3&s=200" title="CarInfo" alt="CarInfo">
+<img src="https://content.audi.co.uk/dam/7_days/CAD/External%20Assets/R8/R8-white/010.png" title="CarInfo" alt="CarInfo">
 
 # CarInfo
 > Choose the right car for you
