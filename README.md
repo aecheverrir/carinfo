@@ -22,7 +22,7 @@
 
 ## Installation
 
-- clone the repo on your console, instructions below
+- clone the repo on your console, instructions [below](#Clone)
 - use `cd carinfo` to enter the main folder
 - use `npm install` to install npm dependencies
 - use `npm run webpack` to generate the 
