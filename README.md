@@ -36,9 +36,9 @@
 
 ## Team
 
-| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
-| :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
+| <a href="https://github.com/aecheverrir" target="_blank">**Alejandro Echeverri**</a> | <a href="https://github.com/paalvarado10" target="_blank">**Pablo Alvarado**</a> |
+| :---: |:---:|
+| [![CarInfo](https://avatars3.githubusercontent.com/u/25350194?s=460&v=4)](https://github.com/aecheverrir)    | [![CarInfo](https://avatars0.githubusercontent.com/u/20799498?s=460&v=4)](https://github.com/paalvarado10) |
 
 ---
 
