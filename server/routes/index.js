@@ -74,7 +74,11 @@ MongoClient.connect(url, function(err, client) {
   const db = client.db(dbName);
 
   if(query === a){
+<<<<<<< HEAD
   	findAll(db, query, callback);
+=======
+    findCarros(db, query, callback);
+>>>>>>> a72f78599f342f86f5cc02d6d85dbd78f4ca07ee
   }
 
   findCarros(db, query, callback);
@@ -121,73 +125,73 @@ MongoClient.connect(url, function(err, client) {
 router.get('/filtro/:marca', function (req, res) {
   getCarros(
   {marca: req.params.marca},
-	(carros) =>{
-		console.log("Entra con filtro: MARCA")
-		res.send(carros);
-	});
+  (carros) =>{
+    console.log("Entra con filtro: MARCA")
+    res.send(carros);
+  });
 });
 
 
 router.get('/pais/:pais', function (req, res) {
   getCarros(
   {pais: req.params.pais},
-	(carros) =>{
-		console.log("Entra con filtro: PAIS ")
-		res.send(carros);
-	});
+  (carros) =>{
+    console.log("Entra con filtro: PAIS ")
+    res.send(carros);
+  });
 });
 
 router.get('/puertas/:puertas', function (req, res) {
   getCarros(
   {puertas: req.params.puertas},
-	(carros) =>{
-		console.log("Entra con filtro: PUERTAS ")
-		res.send(carros);
-	});
+  (carros) =>{
+    console.log("Entra con filtro: PUERTAS ")
+    res.send(carros);
+  });
 });
 
 router.get('/anio/:anio', function (req, res) {
   getCarros(
   {anio: req.params.anio},
-	(carros) =>{
-		console.log("Entra con filtro: Año ")
-		res.send(carros);
-	});
+  (carros) =>{
+    console.log("Entra con filtro: Año ")
+    res.send(carros);
+  });
 });
 
 router.get('/transmicion/:transmicion', function (req, res) {
   getCarros(
   {transmicion: req.params.transmicion},
-	(carros) =>{
-		console.log("Entra con filtro: TRANSMICION ")
-		res.send(carros);
-	});
+  (carros) =>{
+    console.log("Entra con filtro: TRANSMICION ")
+    res.send(carros);
+  });
 });
  router.get('/all', function (req, res) {
    getCarros(
    a,
- 	(carros) =>{
- 		console.log("Entra SIN FILTRO: ")
- 		res.send(carros);
- 	});
+  (carros) =>{
+    console.log("Entra SIN FILTRO: ")
+    res.send(carros);
+  });
  });
 
  router.get('/modelo/:modelo', function (req, res) {
   getCarros(
   {modelo: req.params.modelo},
-	(carros) =>{
-		console.log("Entra con filtro: MODELO ")
-		res.send(carros);
-	});
+  (carros) =>{
+    console.log("Entra con filtro: MODELO ")
+    res.send(carros);
+  });
 });
 
 router.get('/motor/:motor', function (req, res) {
   getCarros(
   {motor: req.params.motor},
-	(carros) =>{
-		console.log("Entra con filtro: MOTOR ")
-		res.send(carros);
-	});
+  (carros) =>{
+    console.log("Entra con filtro: MOTOR ")
+    res.send(carros);
+  });
 }); 
 // REVIEWS
 router.get('/add/:add', (req, res) =>{
