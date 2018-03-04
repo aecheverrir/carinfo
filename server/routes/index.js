@@ -74,11 +74,8 @@ MongoClient.connect(url, function(err, client) {
   const db = client.db(dbName);
 
   if(query === a){
-<<<<<<< HEAD
   	findAll(db, query, callback);
-=======
     findCarros(db, query, callback);
->>>>>>> a72f78599f342f86f5cc02d6d85dbd78f4ca07ee
   }
 
   findCarros(db, query, callback);
