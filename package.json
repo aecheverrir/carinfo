@@ -10,9 +10,11 @@
   "author": "aecheverrir, paalvarado10",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "express": "^4.15.2",
     "mongodb": "^3.0.3",
+    "mongoose": "^5.0.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
