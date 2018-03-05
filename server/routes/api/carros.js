@@ -1,67 +1,40 @@
-const fs = require('fs');
+const express = require('express');
+const router = express.Router();
 const path = require('path');
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+
+const Carro = require('../../models/Carro');
 
 module.exports = (app) => {
-  // API routes
-  fs.readdirSync(__dirname + '/api/').forEach((file) => {
-    require(`./api/${file.substr(0, file.indexOf('.'))}`)(app);
+  app.get('/api/carros', (req, res, next) => {
+    Carro.find()
+      .exec()
+      .then((carro) => res.json(carro))
+      .catch((err) => next(err));
   });
-};
+
+  app.get('/api/carros/marca/:marca', (req, res, next) => {
+    Carro.findOne({marca: req.params.id})
+      .exec()
+      .then((carro) => res.json(carro))
+      .catch((err) => next(err));
+  });
 
 
 
 
 
-
-// var path = require('path');
-// var router = require('express').Router();
-// const MongoClient = require('mongodb').MongoClient;
-// const assert = require('assert');
 // var bodyParser = require("body-parser");
+// var mongoose = require('mongoose');
+// var Carro = require('../models/Carro');
+// var Review = require('../models/Review');
 // // Connection URL
 // const url = 'mongodb://localhost:27017';
 // // Database Name
 // const dbName = 'carinfo';
-// const a = -1;
 
-// // BASE ROUTE
-//  router.get('/', function (req, res) {
-//   res.sendFile(path.join(__dirname, '../../client/index.html'));
-//  });
 
-// module.exports = router;
-
-// //Reviews
-// // Insert Review
-// function addReview (db, query, callback) {
-  
-//   const collection = db.collection('reviews'); 
-// 	var result = query.add.split(",");
-// 	 console.log(result);
-// var iD = result[0];
-// var car = result[1];
-// var puntuation = result[2];
-
-// var nuevo ={"id":"'"+iD+"'","idcarro":"'"+car+"'","puntuacion":"'"+puntuation+"'"};
-// 	console.log(nuevo);
-//   collection.insert(nuevo,
-//    (err, result)=> {
-//    	if (err) throw err;
-//    	console.log("Entraa a GUARDAR");
-//     callback(result);
-//   });
-// }
-
-// function findReviews (db, query, callback) {
-//   // Get the documents collection
-//   const collection = db.collection('reviews');
-//   // Find some documents
-//   collection.find(query).toArray(function(err, docs) {
-//     assert.equal(err, null);
-//     console.log("Found the following records " +docs.lenght);
-//     callback(docs);
-//   });
-// }
 
 
 // //carros
@@ -97,7 +70,7 @@ module.exports = (app) => {
 
 //   if(query === a){
 //   	findAll(db, query, callback);
-//     findCarros(db, query, callback);
+//    // findCarros(db, query, callback);
 //   }
 
 //   findCarros(db, query, callback);
@@ -106,42 +79,17 @@ module.exports = (app) => {
 // });
 // }
 
-
-// function postReview(query, callback){
-// // Use connect method to connect to the server
-// MongoClient.connect(url, function(err, client) {
-//   assert.equal(null, err);
-//   console.log("Connected successfully to server");
-
-//   const db = client.db(dbName);
-
-//   addReview(db, query, callback);
-
-//   client.close();
-// });
-// }
+// router.get('/all', function (req, res) {
+//    getCarros(
+//    a,
+//   (carros) =>{
+//     console.log("Entra SIN FILTRO: ")
+//     res.send(carros);
+//   });
+//  });
 
 
-// function getReviews(query, callback){
-// // Use connect method to connect to the server
-// MongoClient.connect(url, function(err, client) {
-//   assert.equal(null, err);
-//   console.log("Connected successfully to server");
-
-//   const db = client.db(dbName);
-
-//   findReviews(db, query, callback);
-
-//   client.close();
-// });
-// }
-
-
-
-
-
-// // CARROS
-// router.get('/filtro/:marca', function (req, res) {
+// router.get('/marca/:marca', function (req, res) {
 //   getCarros(
 //   {marca: req.params.marca},
 //   (carros) =>{
@@ -149,7 +97,6 @@ module.exports = (app) => {
 //     res.send(carros);
 //   });
 // });
-
 
 // router.get('/pais/:pais', function (req, res) {
 //   getCarros(
@@ -186,14 +133,7 @@ module.exports = (app) => {
 //     res.send(carros);
 //   });
 // });
-//  router.get('/all', function (req, res) {
-//    getCarros(
-//    a,
-//   (carros) =>{
-//     console.log("Entra SIN FILTRO: ")
-//     res.send(carros);
-//   });
-//  });
+
 
 //  router.get('/modelo/:modelo', function (req, res) {
 //   getCarros(
@@ -212,21 +152,6 @@ module.exports = (app) => {
 //     res.send(carros);
 //   });
 // }); 
-// // REVIEWS
-// router.get('/add/:add', (req, res) =>{
-// 	postReview(
-// 		{add: req.params.add},
-// 		(reviews) =>{
-// 			res.send(reviews);
-// 		});
-// });
 
-// router.get('/reviews/:idcarro', function (req, res) {
-//   getReviews(
-//   {idcarro: req.params.idcarro},
-// 	(reviews) =>{
-// 		console.log("Entra con filtro: idcarro")
-// 		res.send(reviews);
-// 	});
-// });
 
+// module.exports = router;

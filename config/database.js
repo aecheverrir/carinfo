@@ -1,4 +1,4 @@
 module.exports = {
-    'secret': 'mySecret',
-    'database': process.env.DB_HOST 
+    db: 'mongodb://localhost:27017/carinfo',
+  	db_dev: 'mongodb://localhost:27017/carinfo',
 };

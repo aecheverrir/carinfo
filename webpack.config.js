@@ -1,25 +1,11 @@
-var path = require('path');
-var webpack = require('webpack');
+switch (process.env.NODE_ENV) {
+  case 'prod':
+  case 'production':
+    module.exports = require('./config/webpack.prod');
+    break;
 
-module.exports = {
-  entry: './client/index.js',
-  output: {
-    path: path.join(__dirname, 'client'),
-    filename: 'bundle.js'
-  },
-  module: {
-    loaders: [{
-      test: /.jsx?$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['es2015', 'react']
-      }
-    },
-    {
-      test: /\.css$/,
-      loader: ["style-loader", "css-loader"]
-    }
-    ]
-  }
+  case 'dev':
+  case 'development':
+  default:
+    module.exports = require('./config/webpack.dev');
 }
