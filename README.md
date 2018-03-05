@@ -12,6 +12,7 @@
 - [Installation](#installation)
 - [Team](#team)
 - [Setup](#setup)
+- [Visit](#visit)
 - [License](#license)
 
 ---
@@ -47,6 +48,12 @@
 | <a href="https://github.com/aecheverrir" target="_blank">**Alejandro Echeverri**</a> | <a href="https://github.com/paalvarado10" target="_blank">**Pablo Alvarado**</a> |
 | :---: |:---:|
 | [![CarInfo](https://avatars3.githubusercontent.com/u/25350194?s=460&v=4)](https://github.com/aecheverrir)    | [![CarInfo](https://avatars0.githubusercontent.com/u/20799498?s=460&v=4)](https://github.com/paalvarado10) |
+
+---
+
+## Visit
+
+Currently deployed with heroku at: <a href="https://carinfo1.herokuapp.com/" target="_blank">**Car Info**</a>
 
 ---
 
