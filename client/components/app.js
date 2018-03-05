@@ -9,11 +9,9 @@ export default class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            name: "Alejandro"
+            name: "testName"
         }
     }  
-
-
   render () {
 
     /*style*/

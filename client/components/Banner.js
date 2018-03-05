@@ -6,9 +6,9 @@ export default class Banner extends React.Component {
     
     /*style*/
   	var styles = { 
-  		"background-color": "#db1d0f",
-      "border-color": "#db1d0f",
-      "margin-color": "#db1d0f"
+  		"backgroundColor": "#db1d0f",
+      "borderColor": "#db1d0f",
+      "marginColor": "#db1d0f"
   	};
 
     return (

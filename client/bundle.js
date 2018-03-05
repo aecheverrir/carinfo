@@ -9646,7 +9646,7 @@ var App = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
     _this.state = {
-      name: "Alejandro"
+      name: "testName"
     };
     return _this;
   }
@@ -9727,9 +9727,9 @@ var Banner = function (_React$Component) {
 
       /*style*/
       var styles = {
-        "background-color": "#db1d0f",
-        "border-color": "#db1d0f",
-        "margin-color": "#db1d0f"
+        "backgroundColor": "#db1d0f",
+        "borderColor": "#db1d0f",
+        "marginColor": "#db1d0f"
       };
 
       return _react2.default.createElement(
