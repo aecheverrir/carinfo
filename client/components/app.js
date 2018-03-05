@@ -6,14 +6,23 @@ import Results from './Results';
 import SideBar from './SideBar';
 
 import { Container, Row, Col } from 'reactstrap';
+import { getCarros } from "../actions/actions";
+
 
 export default class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            name: "testName"
+            name: "testName",
+            carros: [],
         }
+        this.getCarros = getCarros.bind(this);
     }  
+
+    componentDidMount() {
+      this.getCarros(this);
+    }
+
   render () {
 
     /*style*/
@@ -33,24 +42,22 @@ export default class App extends React.Component {
     };
 
     return (
-        <Container>
-        	<div style={styles}>
-        		<Banner title={"CarInfo"}/>
-                <Row>
-                    <Col sm="6" lg="4">
-                        <Container>
-                            <SideBar />
-                        </Container>    
-                    </Col> 
-                    <Col sm="6" lg="8">
-                        <Container>
-                        <DataBar />
-                        <Results />
-                        </Container>
-                    </Col>
-                </Row>
-        	</div>
-        </Container>
+      <Container>
+        <Banner />
+        <Row>
+          <Col sm="5" lg="3">
+            <Container>
+              <SideBar />
+            </Container>    
+          </Col> 
+          <Col sm="7" lg="9">
+              <Container>
+              <DataBar />
+              <Results carros={this.state.carros} />
+              </Container>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

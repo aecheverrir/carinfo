@@ -1,6 +1,6 @@
 //crear y/o utilizar la bd en mongo, es necesario tener mongo instalado//
 utilizar comando sin las comillas dobles: "mongo"
-utilizar comando sin las comillas dobles: "use carinfo"
+utilizar comando sin las comillas dobles: "use carroinfo"
 
 
 // carros //

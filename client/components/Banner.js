@@ -20,7 +20,7 @@ export default class Banner extends React.Component {
 
     return (
     	<div style={styles}>
-    		<h1 style={styleH1}>{this.props.title}</h1>
+    		<h1 style={styleH1}>CarInfo</h1>
     	</div>
     );
   }

@@ -6,7 +6,7 @@ export default class ResultItem extends React.Component {
   render () {
     return (
     	<div>
-    		<div>ResultItem</div>
+    		<div>{this.props.modelo}</div>
     		<AttVal />
     	</div>
 

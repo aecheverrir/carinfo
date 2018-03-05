@@ -1,29 +1,34 @@
 // PACKAGES //
-var path = require('path');
-var fs = require('fs');
-var express = require('express');
+var path = require("path");
+var express = require("express");
+var bodyParser = require("body-parser");
+var morgan = require("morgan");
+var dotenv = require("dotenv");
+dotenv.config();
+
 
 // IMPORTS //
-var indexRoutes = require('./routes/index');
+var indexRoutes = require("./routes/index");
 
 // CREATE APP //
 var app = express();
 
-// VIEW ENGINE //
-app.set('view engine', 'html');
-app.engine('html', function (path, options, callbacks) {
-  fs.readFile(path, 'utf-8', callback);
-});
-
 // MIDDLEWARE //
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, "../client")));
+
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+app.use(bodyParser.json());
+app.use(morgan("dev"));
 
 // ROUTES //
-app.use('/', indexRoutes);
+app.use("/", indexRoutes);
 
 // ERROR HANDLER //
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res) {
   res.status(err.status || 500);
 });
+
 
 module.exports = app;

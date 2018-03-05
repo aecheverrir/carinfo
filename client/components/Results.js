@@ -6,8 +6,7 @@ export default class Results extends React.Component {
     return (
     	<div>
     		<div>Results</div>
-    		<ResultItem />
-    		<ResultItem />
+    		{this.props.carros}
     	</div>
     );
   }
