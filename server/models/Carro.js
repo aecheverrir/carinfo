@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const CarroSchema = new mongoose.Schema({
-	maraca: String,
+	marca: String,
 	anio: String,
 	pais: String,
 	modelo: String,
