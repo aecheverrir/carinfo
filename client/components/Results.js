@@ -5,7 +5,6 @@ export default class Results extends React.Component {
   render () {
     return (
     	<div>
-    		<div>Results</div>
     		{this.props.carros}
     	</div>
     );
