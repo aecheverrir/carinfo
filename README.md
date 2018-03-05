@@ -53,7 +53,7 @@
 
 ## Visit
 
-Currently deployed with heroku at: <a href="https://carinfo1.herokuapp.com/" target="_blank">**Car Info**</a>
+Currently deployed with heroku: <a href="https://carinfo1.herokuapp.com/" target="_blank">**Car Info**</a>
 
 ---
 
