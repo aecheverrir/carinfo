@@ -9,6 +9,13 @@ const url = 'mongodb://localhost:27017';
 const dbName = 'carinfo';
 const a = -1;
 
+// BASE ROUTE
+ router.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '../../client/index.html'));
+ });
+
+module.exports = router;
+
 //Reviews
 // Insert Review
 function addReview (db, query, callback) {
@@ -208,9 +215,3 @@ router.get('/reviews/:idcarro', function (req, res) {
 	});
 });
 
-// BASE ROUTE
- router.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../../client/index.html'));
- });
-
-module.exports = router;
