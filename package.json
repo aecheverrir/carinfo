@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
-    "server": "no de bin/www"
+    "server": "node bin/www"
   },
   "author": "aecheverrir, paalvarado10",
   "license": "MIT",

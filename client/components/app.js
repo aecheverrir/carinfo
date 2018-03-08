@@ -42,20 +42,22 @@ export default class App extends React.Component {
     };
 
     return (
-      <Container>
-        <Banner />
-        <Row>
-          <Col sm="5" lg="3">
-            <Container>
-            </Container>    
-          </Col> 
-          <Col sm="7" lg="9">
+      <div style={styles}>
+        <Container>
+          <Banner />
+          <Row>
+            <Col sm="5" lg="3">
               <Container>
-              <Results carros={this.state.carros} />
-              </Container>
-          </Col>
-        </Row>
-      </Container>
+              </Container>    
+            </Col> 
+            <Col sm="7" lg="9">
+                <Container>
+                <Results carros={this.state.carros} />
+                </Container>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }

@@ -11,9 +11,8 @@ export function getCarros(component) {
 	   let components = data.map((car) => {
 	   		return(<ResultItem  key={car._id} data={car}/>);
 	   });
-
 	   component.setState({carros: components});
 	});
-
-
 }
+
+
