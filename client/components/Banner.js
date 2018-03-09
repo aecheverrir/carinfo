@@ -1,21 +1,30 @@
 import React from 'react';
 import { Container, Row, Col, Input } from 'reactstrap';
+import App from './App';
 
 export default class Banner extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+        testState: "abcd"
+        }
+    }
+
 
   render () {
     
     /*style*/
   	var styles = { 
-  		"backgroundColor": "#db1d0f",
-      "borderColor": "#db1d0f",
-      "marginColor": "#db1d0f",
-      "padding-bottom": "20px",
-      "padding-top": "20px"
+
+        "backgroundColor": "#db1d0f",
+        "borderColor": "#db1d0f",
+        "marginColor": "#db1d0f",
+        "padding-bottom": "20px",
+        "padding-top": "20px"
   	};
     var styleH1 = {
-      "font-size": "50px",
-      "color":"white"
+        "font-size": "50px",
+        "color":"white"
     };
 
     return (
@@ -29,11 +38,12 @@ export default class Banner extends React.Component {
                 <Col sm="10">
                     <Container>
                         <br/>
-                      <Input type="search" name="search" id="buscarCarro" placeholder="Busca un vehiculo..." />
+                        <Input type="search" name="search" id="buscarCarro" placeholder="Busca un vehiculo..." onChange={this.props.callbackApp.bind(this)}/>
                     </Container>
                 </Col>
             </Row>
     	</div>
     );
   }
+
 }

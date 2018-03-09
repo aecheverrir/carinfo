@@ -15,50 +15,56 @@ export default class App extends React.Component {
         this.state = {
             name: "testName",
             carros: [],
-        }
+            search: ""
+        };
         this.getCarros = getCarros.bind(this);
-    }  
+    }
 
     componentDidMount() {
       this.getCarros(this);
     }
 
-  render () {
+    searchInputCallback(dataFromBanner){
+      this.setState({search: dataFromBanner.target.value});
+    }
 
-    /*style*/
-    var styles = { 
-        "margin": "0",
-        "padding": "0",
-        "border": "0",
-        "outline": "0",
-        "font-family": "sans-serif",
-        "font-weight": "normal",
-        "font-size": "15px",
-        "vertical-align": "baseline",
-        "background": "transparent",
-        "box-sizing": "border-box",
-        "line-height": "30px",
-        "color": "#838C95"
-    };
+    render () {
 
-    return (
-      <div style={styles}>
-        <Container>
-          <Banner />
-          <Row>
-            <Col sm="5" lg="3">
-              <Container>
-                <SideBar />
-              </Container>    
-            </Col> 
-            <Col sm="7" lg="9">
-                <Container>
-                  <Results carros={this.state.carros} />
-                </Container>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    );
-  }
+        /*style*/
+        var styles = { 
+            "margin": "0",
+            "padding": "0",
+            "border": "0",
+            "outline": "0",
+            "font-family": "sans-serif",
+            "font-weight": "normal",
+            "font-size": "15px",
+            "vertical-align": "baseline",
+            "background": "transparent",
+            "box-sizing": "border-box",
+            "line-height": "30px",
+            "color": "#838C95"
+        };
+
+        return (
+          <div style={styles}>
+            <Container>
+              <h1> search es: {this.state.search} </h1>
+              <Banner callbackApp={this.searchInputCallback}/>
+              <Row>
+                <Col sm="5" lg="3">
+                  <Container>
+                    <SideBar />
+                  </Container>    
+                </Col> 
+                <Col sm="7" lg="9">
+                    <Container>
+                      <Results carros={this.state.carros} />
+                    </Container>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        );
+    }
 }
