@@ -14,3 +14,15 @@ export function getCarros(component) {
 	   component.setState({carros: components});
 	});
 }
+
+export function getCarrosFilter(component, filtroCarro) {
+	fetch("/api/carros/:filtroCarro")
+	.then(results => {
+		return results.json();
+	}).then(data => {
+	   let components = data.map((car) => {
+	   		return(<ResultItem  key={car._id} data={car}/>);
+	   });
+	   component.setState({carros: components});
+	});
+}

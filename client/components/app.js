@@ -7,6 +7,7 @@ import SideBar from './SideBar';
 
 import { Container, Row, Col } from 'reactstrap';
 import { getCarros } from "../actions/actions";
+import { getCarrosFilter } from "../actions/actions";
 
 
 export default class App extends React.Component {
@@ -19,14 +20,16 @@ export default class App extends React.Component {
         };
         this.getCarros = getCarros.bind(this);
         this.searchInputCallback = this.searchInputCallback.bind(this);
+        this.getCarrosFilter = getCarrosFilter.bind(this);
     }
 
     componentDidMount() {
       this.getCarros(this);
     }
-
+    
     searchInputCallback(dataFromBanner){
       this.setState({search: dataFromBanner.target.value});
+      this.getCarrosFilter(this, this.state.search);
     }
 
     render () {
