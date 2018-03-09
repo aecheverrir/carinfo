@@ -38,7 +38,7 @@ export default class Banner extends React.Component {
                 <Col sm="10">
                     <Container>
                         <br/>
-                        <Input type="search" name="search" id="buscarCarro" placeholder="Busca un vehiculo..." onChange={this.props.callbackApp.bind(this)}/>
+                        <Input type="search" name="search" id="buscarCarro" placeholder="Busca un vehiculo..." onChange={this.props.callbackApp}/>
                     </Container>
                 </Col>
             </Row>

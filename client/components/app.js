@@ -18,6 +18,7 @@ export default class App extends React.Component {
             search: ""
         };
         this.getCarros = getCarros.bind(this);
+        this.searchInputCallback = this.searchInputCallback.bind(this);
     }
 
     componentDidMount() {
@@ -49,7 +50,6 @@ export default class App extends React.Component {
         return (
           <div style={styles}>
             <Container>
-              <h1> search es: {this.state.search} </h1>
               <Banner callbackApp={this.searchInputCallback}/>
               <Row>
                 <Col sm="5" lg="3">
