@@ -64,7 +64,7 @@ export default class App extends React.Component {
                 <Col sm="5" lg="3">
                   <Container>
                     <SideBar />
-                  </Container>    
+                  </Container>
                 </Col> 
                 <Col sm="7" lg="9">
                     <Container>

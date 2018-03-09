@@ -14,13 +14,13 @@ export default class ResultItem extends React.Component {
                     </Col> 
                     <Col sm="6">
                         <Container>
-                            <h3>Marca: {this.props.data.marca}</h3>
-                            <h3>Modelo: {this.props.data.modelo}</h3>
-                            <h5>Linea: {this.props.data.linea}</h5>
+                            <h3>{this.props.data.marca} {this.props.data.modelo} {this.props.data.linea}</h3>
                             <h5>Precio: ${this.props.data.precio}</h5>
                             <h5>Pais de origen: {this.props.data.pais}</h5>
                             <h5>Motor: {this.props.data.motor}L</h5>
                             <h5>HP: {this.props.data.hp}</h5>
+                            <h5>Torque: {this.props.data.torquelbft} Pound Feet</h5>
+
                         </Container>
                     </Col>
                 </Row>

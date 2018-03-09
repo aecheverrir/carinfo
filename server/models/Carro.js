@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const CarroSchema = new mongoose.Schema({
+
 	marca: String,
 	anio: String,
 	pais: String,
@@ -20,6 +21,7 @@ const CarroSchema = new mongoose.Schema({
 	velocidadmaxkm: String,
 	precio: String,
 	imagen: String
+	
 });
 
 module.exports = mongoose.model("Carro", CarroSchema);
