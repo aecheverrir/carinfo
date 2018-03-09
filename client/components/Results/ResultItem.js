@@ -19,6 +19,8 @@ export default class ResultItem extends React.Component {
                             <h5>Linea: {this.props.data.linea}</h5>
                             <h5>Precio: ${this.props.data.precio}</h5>
                             <h5>Pais de origen: {this.props.data.pais}</h5>
+                            <h5>Motor: {this.props.data.motor}L</h5>
+                            <h5>HP: {this.props.data.hp}</h5>
                         </Container>
                     </Col>
                 </Row>

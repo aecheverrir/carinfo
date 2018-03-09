@@ -48,11 +48,12 @@ export default class App extends React.Component {
           <Row>
             <Col sm="5" lg="3">
               <Container>
+                <SideBar />
               </Container>    
             </Col> 
             <Col sm="7" lg="9">
                 <Container>
-                <Results carros={this.state.carros} />
+                  <Results carros={this.state.carros} />
                 </Container>
             </Col>
           </Row>

@@ -14,5 +14,3 @@ export function getCarros(component) {
 	   component.setState({carros: components});
 	});
 }
-
-
