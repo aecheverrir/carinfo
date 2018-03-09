@@ -26,10 +26,16 @@ export default class App extends React.Component {
     componentDidMount() {
       this.getCarros(this);
     }
-    
+
     searchInputCallback(dataFromBanner){
       this.setState({search: dataFromBanner.target.value});
-      this.getCarrosFilter(this, this.state.search);
+      if(dataFromBanner.target.value == 0){
+        this.getCarros(this);
+      }
+      else{
+      this.getCarrosFilter(this, dataFromBanner.target.value);
+      }
+
     }
 
     render () {

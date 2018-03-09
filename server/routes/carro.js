@@ -15,10 +15,11 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:search", (req, res) => {
-	Carro.find({modelo:"C"}, (err, carros) => {
-		var carMap = [];
-		console.log();
 
+	Carro.find({modelo: req.query.modelo}, (err, carros) => {
+		var carMap = [];
+console.log(req.query.modelo);
+console.log(carros);
 		carros.forEach(function(car) {
 			carMap.push(car);
 		}) ;

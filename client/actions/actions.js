@@ -16,7 +16,7 @@ export function getCarros(component) {
 }
 
 export function getCarrosFilter(component, filtroCarro) {
-	fetch("/api/carros/:filtroCarro")
+	fetch("/api/carros/:filtroCarro?modelo=" + filtroCarro)
 	.then(results => {
 		return results.json();
 	}).then(data => {
